@@ -16,8 +16,7 @@ public class Main {
         System.out.println("3) Print List");
         System.out.println("4) Delete element from List");
         System.out.println("5) Add element to List");
-        System.out.println("6) Edit element");
-        System.out.println("7) Get Help");
+
         System.out.println("8) Exit");
     }
 
