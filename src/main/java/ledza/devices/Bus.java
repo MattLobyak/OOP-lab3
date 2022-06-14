@@ -1,16 +1,17 @@
 package ledza.devices;
 
-public class ElectronicBook extends Vehicle {
+public class Bus extends Vehicle {
 
-    public ElectronicBook() {
-        setType("Electronic Book");
+    public Bus() {
+        setType("Bus");
     }
 
     @Override
     public String toString() {
-        return "Console{" +
+        return "Bus{" +
                 "type='" + getType() + '\'' +
                 ", EnginePower=" + getEnginePower() +
                 ", SeatsAmount=" + getSeatsAmount() +
-                "}\n";    }
+                "}\n";
+    }
 }

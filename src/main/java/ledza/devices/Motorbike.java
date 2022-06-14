@@ -2,36 +2,36 @@ package ledza.devices;
 
 import java.util.List;
 
-public class Phone extends Device{
+public class Motorbike extends Vehicle {
 
-    private String phoneNumber;
+    private String bikeNumber;
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getBikeNumber() {
+        return bikeNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setBikeNumber(String bikeNumber) {
+        this.bikeNumber = bikeNumber;
     }
 
-    public Phone() {
-        setType("Phone");
+    public Motorbike() {
+        setType("Motorbike");
     }
 
     @Override
     public String toString() {
-        return "Phone{" +
+        return "Motorbike{" +
                 "type='" + getType() + '\'' +
-                ", Storage=" + getStorage() +
-                ", RAM=" + getRAM() +
-                ", phoneNumber='" + phoneNumber + '\'' +
+                ", EnginePower=" + getEnginePower() +
+                ", SeatsAmount=" + getSeatsAmount() +
+                ", bikeNumber='" + bikeNumber + '\'' +
                 "}\n";
     }
 
     @Override
     public List<String> getAllFields() {
         List<String> res =  super.getAllFields();
-        res.add("phoneNumber");
+        res.add("bikeNumber");
         return res;
     }
 
@@ -41,7 +41,7 @@ public class Phone extends Device{
         Integer size = super.getAllFields().size();
 
         try {
-            phoneNumber = !fieldsValues.get(size).equals("") ? fieldsValues.get(size) : phoneNumber;
+            bikeNumber = !fieldsValues.get(size).equals("") ? fieldsValues.get(size) : bikeNumber;
         }
         catch (Exception e){
             System.out.println("Error value");

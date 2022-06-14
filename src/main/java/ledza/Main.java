@@ -2,7 +2,7 @@ package ledza;
 
 import ledza.devices.*;
 import ledza.factory.AbstractFactory;
-import ledza.factory.DeviceFactory;
+import ledza.factory.VehicleFactory;
 
 import java.io.IOException;
 import java.util.*;
@@ -16,11 +16,12 @@ public class Main {
         System.out.println("3) Print List");
         System.out.println("4) Delete element from List");
         System.out.println("5) Add element to List");
-
+        System.out.println("6) Edit element");
+        System.out.println("7) Help");
         System.out.println("8) Exit");
     }
 
-    public static void deleteElement(List<Device> devices){
+    public static void deleteElement(List<Vehicle> devices){
         for (int i =0;i<devices.size();i++){
             System.out.print(i+1 + ") ");
             System.out.print(devices.get(i));
@@ -38,7 +39,7 @@ public class Main {
         System.out.println("Successful deletion");
     }
 
-    public static void addElement(List<Device> devices){
+    public static void addElement(List<Vehicle> devices){
 
         JsonSerializer jsonSerializer = new JsonSerializer();
         List<String> types = new ArrayList<>(jsonSerializer.typesToTypeMap.keySet());
@@ -57,13 +58,13 @@ public class Main {
             System.out.println("Error number");
             return;
         }
-        DeviceFactory deviceFactory = new DeviceFactory();
+        VehicleFactory deviceFactory = new VehicleFactory();
         AbstractFactory factory = deviceFactory.factoryMap.get(choosedType);
-        Device device = factory.createObj();
+        Vehicle device = factory.createObj();
         devices.add(device);
     }
 
-    public static void editElement(List<Device> devices){
+    public static void editElement(List<Vehicle> devices){
         for (int i = 0; i<devices.size();i++){
             System.out.println(i+1 + ") " + devices.get(i));
         }
@@ -71,7 +72,7 @@ public class Main {
         System.out.print("Choose device: ");
         Scanner scanner = new Scanner(System.in);
 
-        Device device;
+        Vehicle device;
         try {
             Integer num = Integer.parseInt(scanner.nextLine().strip());
             device = devices.get(num-1);
@@ -117,14 +118,14 @@ public class Main {
         List<Device> devices = List.of(computer, notebook, watch, phone);
 */
         JsonSerializer jsonSerializer = new JsonSerializer();
-        List<Device> devices = new ArrayList<>();
+        List<Vehicle> devices = new ArrayList<>();
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Start program!");
+        System.out.println("---------------------||||----------------------");
         Main.getHelp();
         while (true){
-            System.out.print("Enter number: ");
+            System.out.print("Enter number of action you need: ");
             Integer number = Integer.parseInt(scanner.next());
 
             if (number == 1)

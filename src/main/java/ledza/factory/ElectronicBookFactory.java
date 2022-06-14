@@ -1,11 +1,11 @@
 package ledza.factory;
 
-import ledza.devices.Device;
+import ledza.devices.Vehicle;
 import ledza.devices.ElectronicBook;
 
 public class ElectronicBookFactory implements AbstractFactory{
     @Override
-    public Device createObj() {
+    public Vehicle createObj() {
         return new ElectronicBook();
     }
 }

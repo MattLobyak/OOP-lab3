@@ -1,1 +1,1 @@
-[{"type":"Computer","thereGPU":false,"storage":100,"ram":20000},{"type":"Notebook","batteryPower":228,"thereGPU":false,"storage":5000,"ram":50000},{"type":"Watch","owner":"Rolex","storage":20,"ram":1000},{"type":"Phone","phoneNumber":"3759999999","storage":1111,"ram":500}]
+[{"type":"Bus","enginePower":null,"seatsAmount":null}]

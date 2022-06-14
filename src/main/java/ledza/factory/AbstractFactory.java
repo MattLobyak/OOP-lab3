@@ -1,8 +1,8 @@
 package ledza.factory;
 
-import ledza.devices.Device;
+import ledza.devices.Vehicle;
 
 public interface AbstractFactory {
 
-    public Device createObj();
+    public Vehicle createObj();
 }
